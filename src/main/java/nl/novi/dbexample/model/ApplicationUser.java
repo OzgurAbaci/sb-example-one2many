@@ -44,7 +44,6 @@ public class ApplicationUser {
     @JoinColumn(name="OWNER_ID", referencedColumnName = "USER_ID")
     private List<Dog> dogs;
 
-
     /*
     Hieronder vind je alle getter en setters. Ik ga ervanuit dat je weet wat deze zijn en doen.
      */

@@ -3,6 +3,9 @@
 Laten zien hoe een 1 tot meer relatie als tabel in de database komt. De domeinklasse zijn gemaakt met behulp van JPA 
 binnen het Spring-boot framework.
 
+Deze branch is een uitbreiding op de master-branch en laat ook een N tot N of (ManyToMany) relatie zien.
+
+
 ## Bidirectioneel
 Birectioneel betekent dat je aan beide kanten van de relatie weet wie erbij hoort. In dit geval kun je er via het 
 Dog-object achterkomen wie de eigenaar is, maar je kunt ook via de eigenaar erachter komen welke honden deze heeft.
@@ -15,6 +18,15 @@ een ApplicationUser-object krijgt, mits de hond een eigenaar heeft.
 
 Wanneer je een ApplicationUser-instantie ophaalt uit de database, dan maakt Spring daar een ApplicationUser-object van 
 en voegt, mits de gebruikers honden heeft, deze ook toe aan het object.
+
+## Many to Many
+Aan deze branch is de klasse WalkGroup toegevoegd. Een hond kan bij meerdere WalkGroup-en horen en een WalkGroup bevat
+meerdere honden. Bekijk de klasses voor extra uitleg. Een van de twee klasses moet onderstaande annotatie hebben. 
+Gebeurt dat niet dan worden er door JPA twee koppeltabellen in de databse aangemaakt.
+```
+@ManyToMany(mappedBy = "dogs")
+```
+![dubbele koppeltabellen](img/te-veel-tabellen.png)
 
 ## Aanpassingen om werkend te krijgen
 in src/main/resources/application.properties dien je de gegevens aan te passen naar jouw postgresql database.
