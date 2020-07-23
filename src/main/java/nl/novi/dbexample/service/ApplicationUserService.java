@@ -79,6 +79,7 @@ public class ApplicationUserService implements IApplicationUserService {
         throw new UserNotFoundException(id);
     }
 
+    @Override
     public ApplicationUser addTestUserWithDogs() {
         ApplicationUser user = new ApplicationUser();
         user.setName("Nick Stuivenberg");
