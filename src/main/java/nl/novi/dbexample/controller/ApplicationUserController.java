@@ -108,8 +108,7 @@ public class ApplicationUserController {
         barra.setOwner(user);
         joop.setOwner(user);
 
-        applicationUserRepository.save(user);
-        return user;
+        return applicationUserRepository.save(user);
     }
 
 
