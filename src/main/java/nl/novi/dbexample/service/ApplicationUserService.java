@@ -14,8 +14,19 @@ import java.util.Optional;
 @Service
 public class ApplicationUserService implements IApplicationUserService {
 
+
+    private final ApplicationUserRepository applicationUserRepository;
+
+    /**
+     * Dit is de constructor. We maken hier gebruik van een constructorbased injection-type.
+     * Je kunt er hier meer over lezen:
+     * https://blog.marcnuri.com/field-injection-is-not-recommended/
+     * @param applicationUserRepository The repository class.
+     */
     @Autowired
-    private ApplicationUserRepository applicationUserRepository;
+    public ApplicationUserService(ApplicationUserRepository applicationUserRepository) {
+        this.applicationUserRepository = applicationUserRepository;
+    }
 
     @Override
     public ApplicationUser getUserById(Long id) {
