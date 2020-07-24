@@ -16,21 +16,18 @@ import java.util.List;
  */
 @Entity
 public class ApplicationUser {
-
-    /*
-    {
-        "name": "Nick",
-        "email": "n@n.nl"
-    }
-
-     */
-
     /**
      * We laten op regel X hibernate het beste generation-type selecteren. Je kunt er hier meer over lezen:
      * https://thorben-janssen.com/jpa-generate-primary-keys/
      *
      * UITBREIDING (gebruik generator):
      * https://stackoverflow.com/questions/49241216/has-spring-boot-changed-the-way-auto-increment-of-ids-works-through-generatedva
+     *
+     * Dit object in JSON
+     * {
+     *         "name": "Nick",
+     *         "email": "n@n.nl"
+     * }
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
@@ -64,7 +61,7 @@ public class ApplicationUser {
     public long getId() {
         return userId;
     }
-
+    
     public void setId(long id) {
         this.userId = id;
     }
